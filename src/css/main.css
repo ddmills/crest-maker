@@ -1,0 +1,57 @@
+body {
+  color: #706C66;
+}
+.page-title {
+  border-bottom: 1px dashed #eee;
+  margin: 16px 8px;
+  padding: 16px 0px;
+}
+
+.options > li .crest {
+  letter-spacing: 2px;
+}
+.options > li * {
+  pointer-events: none;
+}
+.options > li {
+  cursor: pointer;
+}
+.options > li:not(.active):hover {
+  background-color: #F5CDCD;
+}
+
+#panel-parts, #panel-details {
+  display: none;
+}
+
+#crest > svg {
+  margin: 20px auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+#crest-input-details label {
+  margin: 16px 0 4px;
+  display: block;
+}
+
+.panel-title {
+  font-weight: 600;
+  font-size: 15px;
+}
+.panel-header {
+  padding: 8px;
+  border-bottom: 1px dashed #eee;
+}
+.panel-body {
+  padding: 8px;
+}
+.list-item {
+  padding : 4px 8px;
+}
+.list-item.active {
+  background-color: #F9E7E7;
+}

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <title>Crest-Maker</title>
+
+  <link href='./src/css/primer.css' rel='stylesheet' type='text/css'>
+  <link href='./src/css/main.css' rel='stylesheet' type='text/css'>
+  <link href='./src/css/font-crests.css' rel='stylesheet' type='text/css'>
+
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+  <script src='./src/js/main.js'></script>
+  <script src='./src/js/jscolor/jscolor.min.js'></script>
+</head>
+<body>
+  <div class='container'>
+    <h1 class='page-title'> Crest Maker </h1>
+    <div id='crest'>
+      <svg width='200' height='250' >
+        <defs id='part-pats'></defs>
+
+        <clipPath id='svg_back'>
+          <path stroke-linejoin='miter' style='marker-start:none;' d='m74.545,228.12,0,0c-28.126-22.07-48.519-46.99-62.762-84.37-4.138-13.71-6.1492-30.55-7.3841-46.226-2.1147-26.845,0-80.812,0-80.812s41.069-2.982,61.393-6.2394c11.31-1.1496,34.208-7.0139,34.208-7.0139s22.898,6.5108,34.208,7.6602c20.325,3.2574,61.393,6.2394,61.393,6.2394s2.1147,53.966,0,80.812c-1.2348,15.676-3.2461,32.512-7.3838,46.224-14.243,37.386-34.636,62.305-62.763,84.368-8.4345,6.6139-25.455,17.779-25.455,17.779s-17.02-11.811-25.455-18.425z' />
+        </clipPath>
+
+        <g id='crest-bkg' style='clip-path:url(#svg_back);'>
+          <rect width='200' height='250' fill='url(#pattern)' />
+        </g>
+
+        <g id='crest-shapes' style='clip-path:url(#svg_back);'> </g>
+
+        <g style='clip-path:url(#svg_back);'>
+          <image id='overlay' x='0' y='0' width='200' height='250' xlink:href='src/image/crest-overlay.png' />
+        </g>
+
+        <path stroke-linejoin='miter' style='marker-start:none;' d='m74.545,228.12,0,0c-28.126-22.07-48.519-46.99-62.762-84.37-4.138-13.71-6.1492-30.55-7.3841-46.226-2.1147-26.845,0-80.812,0-80.812s41.069-2.982,61.393-6.2394c11.31-1.1496,34.208-7.0139,34.208-7.0139s22.898,6.5108,34.208,7.6602c20.325,3.2574,61.393,6.2394,61.393,6.2394s2.1147,53.966,0,80.812c-1.2348,15.676-3.2461,32.512-7.3838,46.224-14.243,37.386-34.636,62.305-62.763,84.368-8.4345,6.6139-25.455,17.779-25.455,17.779s-17.02-11.811-25.455-18.425z' stroke-dashoffset='0' stroke='#222' stroke-linecap='butt' stroke-miterlimit='4' stroke-dasharray='none' stroke-width='6' fill='none'/>
+      </svg>
+    </div>
+    <div class='columns'>
+      <div class='one-third column'>
+        <div class='panel' id='panel-layouts'>
+          <div class='panel-header'>
+            <div class='panel-title'>Layouts</div>
+          </div>
+          <ul class='list-group options' id='crest-input-layout'></ul>
+        </div>
+      </div>
+      <div class='one-third column'>
+        <div class='panel' id='panel-parts'>
+          <div class='panel-header'>
+            <div class='panel-title'>Ordinaries</div>
+          </div>
+          <div class='panel-body'>
+            <ul class='list-group options' id='crest-input-parts'></ul>
+          </div>
+        </div>
+      </div>
+      <div class='one-third column'>
+        <div class='panel' id='panel-details'>
+          <div class='panel-header'>
+            <div class='panel-title'>Edit Ordinary</div>
+          </div>
+          <div class='panel-body'>
+            <form id='crest-input-details'>
+              <label for='crest-input-part-color'>Color</label>
+              <input type='text' id='crest-input-part-color' class='input-block color {pickerFaceColor:"transparent",pickerFace:3,pickerBorder:0,pickerInsetColor:"black",onImmediateChange:"colorChanged(this);"}'>
+              <div class='form-checkbox'>
+                <label>
+                  <input id='crest-input-part-border' type='checkbox' checked='checked'/>
+                  Border
+                </label>
+              </div>
+              <label for='crest-input-part-pattern'>Pattern</label>
+              <select class='input-block' id='crest-input-part-pattern'></select>
+              <label for='crest-input-pat-color'>Pattern Color</label>
+              <input type='text' id='crest-input-pat-color' class='input-block color {pickerFaceColor:"transparent",pickerFace:3,pickerBorder:0,pickerInsetColor:"black",onImmediateChange:"patColorChanged(this);"}'>
+            </form>
+          </div>
+        </div>
+      </div>
+    </ul>
+  </div>
+</body>
+</html>
